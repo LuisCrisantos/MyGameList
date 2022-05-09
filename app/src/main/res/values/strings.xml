@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyGameList</string>
+    <string name="mgl_logo">MyGameList logo</string>
+    <string-array name="genres">
+        <item>RPGs</item>
+        <item>Action</item>
+        <item>Shooter</item>
+    </string-array>
+</resources>
