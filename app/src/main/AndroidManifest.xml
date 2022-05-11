@@ -16,12 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RPGActivity"></activity>
         <activity android:name=".RPGCategoryActivity"></activity>
-        <activity android:name=".ActionActivity"></activity>
-        <activity android:name=".ActionCategoryActivity"></activity>
-        <activity android:name=".ShooterActivity"></activity>
-        <activity android:name=".ShooterCategoryActivity"></activity>
+        <activity android:name=".RPGDetailActivity"></activity>
     </application>
 
 </manifest>
