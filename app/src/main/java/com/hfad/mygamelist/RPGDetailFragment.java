@@ -12,6 +12,15 @@ import androidx.fragment.app.Fragment;
 
 public class RPGDetailFragment extends Fragment {
     private long rpgId;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            rpgId = savedInstanceState.getLong("rpgId");
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_rpg_detail, container, false);
@@ -33,6 +42,11 @@ public class RPGDetailFragment extends Fragment {
             photo.setImageResource(rpg.getImageResourceId());
             photo.setContentDescription(rpg.getName());
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putLong("rpgId", rpgId);
     }
 
     public void setRPG(long id) {

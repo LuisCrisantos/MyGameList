@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_game"
+            android:icon="@android:drawable/sym_action_email"
+            android:title="Game List"
+            android:checked="true"/>
+        <item
+            android:id="@+id/nav_top"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="Top Games" />
+        <item
+            android:id="@+id/nav_recents"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="Recent Games" />
+        <item
+            android:id="@+id/nav_upcoming"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="Upcoming games in the next month" />
+        <item
+            android:id="@+id/nav_recommend"
+            android:icon="@android:drawable/ic_menu_delete"
+            android:title="Recommended for you" />
+    </group>
+
+    <item android:title="Support">
+        <menu>
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@android:drawable/ic_menu_help"
+                android:title="Help"/>
+
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@android:drawable/sym_action_email"
+                android:title="Feedback"/>
+        </menu>
+    </item>
+
+</menu>
