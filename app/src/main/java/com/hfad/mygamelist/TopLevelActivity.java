@@ -24,7 +24,7 @@ public class TopLevelActivity extends AppCompatActivity implements NavigationVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_level);
 
-        AdapterView.OnItemClickListener itemClickListener =
+        /*AdapterView.OnItemClickListener itemClickListener =
                 new AdapterView.OnItemClickListener(){
                     public void onItemClick(AdapterView<?> listView,
                                             View itemView,
@@ -39,7 +39,7 @@ public class TopLevelActivity extends AppCompatActivity implements NavigationVie
                 };
 
         ListView listView = (ListView) findViewById(R.id.list_options);
-        listView.setOnItemClickListener(itemClickListener);
+        listView.setOnItemClickListener(itemClickListener);*/
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -85,6 +85,11 @@ public class TopLevelActivity extends AppCompatActivity implements NavigationVie
 
             case R.id.nav_recommend:
                 fragment = new RecommendationFragment();
+                break;
+
+            case R.id.nav_search:
+                //fragment = new SearchFragment();
+                intent = new Intent(this, SearchActivity.class);
                 break;
 
             case R.id.nav_help:

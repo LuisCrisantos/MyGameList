@@ -25,6 +25,10 @@
             android:id="@+id/nav_recommend"
             android:icon="@android:drawable/ic_menu_delete"
             android:title="Recommended for you" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="Search your favorite games" />
     </group>
 
     <item android:title="Support">
