@@ -25,6 +25,11 @@ public class SearchActivity extends AppCompatActivity{
                                     RPGCategoryActivity.class);
                             startActivity(intent);
                         }
+                        if (position == 1) {
+                            Intent intent = new Intent(SearchActivity.this,
+                                    ActionCategoryActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 };
 

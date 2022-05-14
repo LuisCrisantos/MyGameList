@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 import androidx.fragment.app.ListFragment;
 
-public class RPGListFragment extends ListFragment {
+public class ActionListFragment extends ListFragment {
     private Listener listener;
 
     static interface Listener {
@@ -19,9 +19,9 @@ public class RPGListFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        String[] names = new String[RPG.games.length];
+        String[] names = new String[Action.games.length];
         for (int i = 0; i < names.length; i++) {
-            names[i] = RPG.games[i].getName();
+            names[i] = Action.games[i].getName();
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 inflater.getContext(), android.R.layout.simple_list_item_1,
@@ -34,7 +34,7 @@ public class RPGListFragment extends ListFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.listener = (Listener)context;
+        this.listener = (ActionListFragment.Listener)context;
     }
 
     @Override
