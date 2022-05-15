@@ -22,7 +22,7 @@ public class ActionDetailFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_action_detail, container, false);
+        return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 
     @Override
@@ -40,6 +40,21 @@ public class ActionDetailFragment extends Fragment {
             ImageView photo = (ImageView) view.findViewById(R.id.photo);
             photo.setImageResource(action.getImageResourceId());
             photo.setContentDescription(action.getName());
+
+            TextView score = (TextView) view.findViewById(R.id.score);
+            score.setText(action.getScore());
+
+            TextView developers = (TextView) view.findViewById(R.id.developers);
+            developers.setText(action.getDevelopers());
+
+            TextView publishers = (TextView) view.findViewById(R.id.publishers);
+            publishers.setText(action.getPublishers());
+
+            TextView platforms = (TextView) view.findViewById(R.id.platforms);
+            platforms.setText(action.getPlatforms());
+
+            TextView rel_date = (TextView) view.findViewById(R.id.rel_date);
+            rel_date.setText(action.getRel_date());
         }
     }
 

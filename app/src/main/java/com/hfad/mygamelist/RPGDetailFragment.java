@@ -23,7 +23,7 @@ public class RPGDetailFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_rpg_detail, container, false);
+        return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 
     @Override
@@ -41,6 +41,21 @@ public class RPGDetailFragment extends Fragment {
             ImageView photo = (ImageView) view.findViewById(R.id.photo);
             photo.setImageResource(rpg.getImageResourceId());
             photo.setContentDescription(rpg.getName());
+
+            TextView score = (TextView) view.findViewById(R.id.score);
+            score.setText(rpg.getScore());
+
+            TextView developers = (TextView) view.findViewById(R.id.developers);
+            developers.setText(rpg.getDevelopers());
+
+            TextView publishers = (TextView) view.findViewById(R.id.publishers);
+            publishers.setText(rpg.getPublishers());
+
+            TextView platforms = (TextView) view.findViewById(R.id.platforms);
+            platforms.setText(rpg.getPlatforms());
+
+            TextView rel_date = (TextView) view.findViewById(R.id.rel_date);
+            rel_date.setText(rpg.getRel_date());
         }
     }
 
