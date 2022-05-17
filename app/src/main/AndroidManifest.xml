@@ -20,6 +20,8 @@
         <activity android:name=".RPGDetailActivity"></activity>
         <activity android:name=".ActionCategoryActivity"></activity>
         <activity android:name=".ActionDetailActivity"></activity>
+        <activity android:name=".ShooterCategoryActivity"></activity>
+        <activity android:name=".ShooterDetailActivity"></activity>
         <activity android:name=".HelpActivity"></activity>
         <activity android:name=".FeedbackActivity"></activity>
         <activity android:name=".SearchActivity"></activity>

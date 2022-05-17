@@ -30,6 +30,11 @@ public class SearchActivity extends AppCompatActivity{
                                     ActionCategoryActivity.class);
                             startActivity(intent);
                         }
+                        if (position == 2) {
+                            Intent intent = new Intent(SearchActivity.this,
+                                    ShooterCategoryActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 };
 

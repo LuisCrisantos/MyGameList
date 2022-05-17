@@ -18,11 +18,13 @@ public class RPG {
                     "Only their lifeless corpses remained.\n"+"Eons have passed. Now our world, " +
                     "this vast land stretching across the remains of the Bionis, is under attack from a relentless force known as the Mechon.",
                     "9.9", "Monolithsoft", "Nintendo", "Nintendo Switch", "29/05/2020", R.drawable.xenobladecover),
+
             new RPG("Persona 3 FES", "Time never waits.\n" +
                     "It delivers all equally to the same end.\n" +
                     "You, who wish to safeguard the future, however limited it may be...\n" +
                     "You will be given one year; go forth without falter with your heart as your guide...",
                     "9.7", "Atlus", "Sony", "PS2", "22/04/2008",R.drawable.persona3cover),
+
             new RPG("Yakuza Like a Dragon", "Ichiban Kasuga, born and raised in a soapland in Kamurocho " +
                     "without ever knowing his real parents. After his life is saved at the age of fiteen by Masumi Arakawa, " +
                     "a yakuza, Kasuga decidates his life to serving the Arakawa Family, until the first day of the 21st century. " +

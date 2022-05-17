@@ -99,7 +99,6 @@ public class TopLevelActivity extends AppCompatActivity implements NavigationVie
             case R.id.nav_feedback:
                 intent = new Intent(this, FeedbackActivity.class);
                 break;
-                
         }
 
         if(fragment != null){
