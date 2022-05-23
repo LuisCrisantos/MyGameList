@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 public class ActionDetailFragment extends Fragment {
-    private long actionId;
+    private static long actionId;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -30,31 +30,32 @@ public class ActionDetailFragment extends Fragment {
         super.onStart();
         View view = getView();
         if (view != null) {
+            MyGameListDatabaseHelper db = new MyGameListDatabaseHelper(getActivity());
+            DbResponse response = db.getActionData();
+
             TextView title = (TextView) view.findViewById(R.id.name);
-            Action action = Action.games[(int) actionId];
-            title.setText(action.getName());
+            title.setText(response.name);
 
             TextView description = (TextView) view.findViewById(R.id.description);
-            description.setText(action.getDescription());
+            description.setText(response.description);
 
             ImageView photo = (ImageView) view.findViewById(R.id.photo);
-            photo.setImageResource(action.getImageResourceId());
-            photo.setContentDescription(action.getName());
+            photo.setImageResource(response.imageResourceId);
 
             TextView score = (TextView) view.findViewById(R.id.score);
-            score.setText(action.getScore());
+            score.setText(response.score);
 
             TextView developers = (TextView) view.findViewById(R.id.developers);
-            developers.setText(action.getDevelopers());
+            developers.setText(response.developers);
 
             TextView publishers = (TextView) view.findViewById(R.id.publishers);
-            publishers.setText(action.getPublishers());
+            publishers.setText(response.publishers);
 
             TextView platforms = (TextView) view.findViewById(R.id.platforms);
-            platforms.setText(action.getPlatforms());
+            platforms.setText(response.platforms);
 
             TextView rel_date = (TextView) view.findViewById(R.id.rel_date);
-            rel_date.setText(action.getRel_date());
+            rel_date.setText(response.rel_date);
         }
     }
 
@@ -66,4 +67,6 @@ public class ActionDetailFragment extends Fragment {
     public void setAction(long id) {
         this.actionId = id;
     }
+
+    public static long getActionId() { return actionId; }
 }

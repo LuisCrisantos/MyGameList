@@ -14,8 +14,8 @@ public class Shooter {
             new Shooter("Kid Icarus Uprising", "25 years after the original Kid Icarus, Medusa has been resurrected " +
                     "and once again attempts to eradicate mankind while seeking revenge on Pit and Palutena. Upon learning this, " +
                     "Palutena summons Pit to stop the Underworld Army and bring peace to their realm once more.",
-
                     "9.9", "Project Sora", "Nintendo", "Nintendo 3DS", "22/03/2012", R.drawable.kidicaruscover),
+
             new Shooter("Metroid Prime", "The game takes place on the planet Tallon IV, formerly inhabited by the Chozo race." +
                     "Five decades ago, the Chozo race fell after a meteor impacted on Tallon IV. The meteor contaminated the planet with a corruptive," +
                     " mutagenic substance that the Space Pirates later named Phazon, and also brought with it a creature known to the Chozo " +

@@ -1,12 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.hfad.mygamelist.GameFragment">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="User game list" />
-</LinearLayout>
+    <!--<TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:text="User game list" />-->
+
+    <TableLayout
+        android:id="@+id/simpleTableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:stretchColumns="1">
+
+        <TableLayout
+            android:id="@+id/example1">
+            <TableRow
+                android:id="@+id/firstGamePhoto"
+                android:layout_width="83dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+                <ImageView
+                    android:id="@+id/firstPhoto"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="Game cover art"
+                    tools:srcCompat="@drawable/botwcover" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/firstGameTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+                <TextView
+                    android:id="@+id/firstTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="0dip"
+                    android:text="The Legend of Zelda\nBreath of the Wild"
+                    android:textSize="12sp" />
+            </TableRow>
+        </TableLayout>
+
+        <!--<TableLayout
+            android:id="@+id/example2">
+            <TableRow
+                android:id="@+id/secondGamePhoto"
+                android:layout_width="83dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+                <ImageView
+                    android:id="@+id/secondPhoto"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="Game cover art"
+                    tools:srcCompat="@drawable/botwcover" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/secondGameTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+                <TextView
+                    android:id="@+id/secondTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="0dip"
+                    android:text="The Legend of Zelda\nBreath of the Wild"
+                    android:textSize="12sp" />
+            </TableRow>
+        </TableLayout>-->
+    </TableLayout>
+
+</ScrollView>

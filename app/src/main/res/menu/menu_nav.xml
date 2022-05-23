@@ -6,16 +6,16 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_game"
-            android:icon="@android:drawable/sym_action_email"
+            android:icon="@android:drawable/ic_menu_agenda"
             android:title="Game List"
             android:checked="true"/>
         <item
             android:id="@+id/nav_top"
-            android:icon="@android:drawable/ic_menu_edit"
+            android:icon="@android:drawable/star_big_on"
             android:title="Top Games" />
         <item
             android:id="@+id/nav_recents"
-            android:icon="@android:drawable/ic_menu_edit"
+            android:icon="@android:drawable/ic_input_add"
             android:title="Recent Games" />
         <item
             android:id="@+id/nav_upcoming"

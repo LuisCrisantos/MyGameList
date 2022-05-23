@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 public class ShooterDetailFragment extends Fragment {
-    private long shooterId;
+    private static long shooterId;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -30,7 +30,7 @@ public class ShooterDetailFragment extends Fragment {
         super.onStart();
         View view = getView();
         if (view != null) {
-            TextView title = (TextView) view.findViewById(R.id.name);
+            /*TextView title = (TextView) view.findViewById(R.id.name);
             Shooter shooter = Shooter.games[(int) shooterId];
             title.setText(shooter.getName());
 
@@ -54,7 +54,34 @@ public class ShooterDetailFragment extends Fragment {
             platforms.setText(shooter.getPlatforms());
 
             TextView rel_date = (TextView) view.findViewById(R.id.rel_date);
-            rel_date.setText(shooter.getRel_date());
+            rel_date.setText(shooter.getRel_date());*/
+
+            MyGameListDatabaseHelper db = new MyGameListDatabaseHelper(getActivity());
+            DbResponse response = db.getShooterData();
+
+            TextView title = (TextView) view.findViewById(R.id.name);
+            title.setText(response.name);
+
+            TextView description = (TextView) view.findViewById(R.id.description);
+            description.setText(response.description);
+
+            ImageView photo = (ImageView) view.findViewById(R.id.photo);
+            photo.setImageResource(response.imageResourceId);
+
+            TextView score = (TextView) view.findViewById(R.id.score);
+            score.setText(response.score);
+
+            TextView developers = (TextView) view.findViewById(R.id.developers);
+            developers.setText(response.developers);
+
+            TextView publishers = (TextView) view.findViewById(R.id.publishers);
+            publishers.setText(response.publishers);
+
+            TextView platforms = (TextView) view.findViewById(R.id.platforms);
+            platforms.setText(response.platforms);
+
+            TextView rel_date = (TextView) view.findViewById(R.id.rel_date);
+            rel_date.setText(response.rel_date);
         }
     }
 
@@ -66,4 +93,6 @@ public class ShooterDetailFragment extends Fragment {
     public void setShooter(long id) {
         this.shooterId = id;
     }
+
+    public static long getShooterId() { return shooterId; }
 }

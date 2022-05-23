@@ -1,17 +1,22 @@
 package com.hfad.mygamelist;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 
 public class RPGDetailFragment extends Fragment {
-    private long rpgId;
+    private static long rpgId;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -31,31 +36,32 @@ public class RPGDetailFragment extends Fragment {
         super.onStart();
         View view = getView();
         if (view != null) {
+            MyGameListDatabaseHelper db = new MyGameListDatabaseHelper(getActivity());
+            DbResponse response = db.getRpgData();
+
             TextView title = (TextView) view.findViewById(R.id.name);
-            RPG rpg = RPG.games[(int) rpgId];
-            title.setText(rpg.getName());
+            title.setText(response.name);
 
             TextView description = (TextView) view.findViewById(R.id.description);
-            description.setText(rpg.getDescription());
+            description.setText(response.description);
 
             ImageView photo = (ImageView) view.findViewById(R.id.photo);
-            photo.setImageResource(rpg.getImageResourceId());
-            photo.setContentDescription(rpg.getName());
+            photo.setImageResource(response.imageResourceId);
 
             TextView score = (TextView) view.findViewById(R.id.score);
-            score.setText(rpg.getScore());
+            score.setText(response.score);
 
             TextView developers = (TextView) view.findViewById(R.id.developers);
-            developers.setText(rpg.getDevelopers());
+            developers.setText(response.developers);
 
             TextView publishers = (TextView) view.findViewById(R.id.publishers);
-            publishers.setText(rpg.getPublishers());
+            publishers.setText(response.publishers);
 
             TextView platforms = (TextView) view.findViewById(R.id.platforms);
-            platforms.setText(rpg.getPlatforms());
+            platforms.setText(response.platforms);
 
             TextView rel_date = (TextView) view.findViewById(R.id.rel_date);
-            rel_date.setText(rpg.getRel_date());
+            rel_date.setText(response.rel_date);
         }
     }
 
@@ -67,4 +73,5 @@ public class RPGDetailFragment extends Fragment {
     public void setRPG(long id) {
         this.rpgId = id;
     }
+    public static long getRpgId() { return rpgId; }
 }
