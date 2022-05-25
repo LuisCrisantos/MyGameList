@@ -1,8 +1,11 @@
-package com.hfad.mygamelist;
+package com.hfad.mygamelist.Activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.hfad.mygamelist.R;
+import com.hfad.mygamelist.ShooterDetailFragment;
 
 public class ShooterDetailActivity extends AppCompatActivity {
     public static final String EXTRA_SHOOTERID = "shooterId";

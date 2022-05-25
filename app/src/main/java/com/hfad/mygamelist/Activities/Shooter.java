@@ -1,4 +1,6 @@
-package com.hfad.mygamelist;
+package com.hfad.mygamelist.Activities;
+
+import com.hfad.mygamelist.R;
 
 public class Shooter {
     private String name;

@@ -1,4 +1,4 @@
-package com.hfad.mygamelist;
+package com.hfad.mygamelist.Activities;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.hfad.mygamelist.R;
+import com.hfad.mygamelist.RPGDetailFragment;
 
 public class RPGDetailActivity extends AppCompatActivity {
     public static final String EXTRA_RPGID = "rpgId";

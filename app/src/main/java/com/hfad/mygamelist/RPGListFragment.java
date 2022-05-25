@@ -10,6 +10,8 @@ import android.widget.ListView;
 
 import androidx.fragment.app.ListFragment;
 
+import com.hfad.mygamelist.Activities.RPG;
+
 public class RPGListFragment extends ListFragment {
     private Listener listener;
 

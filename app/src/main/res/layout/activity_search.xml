@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.hfad.mygamelist.SearchActivity" >
+    tools:context="com.hfad.mygamelist.Activities.SearchActivity" >
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="178dp"

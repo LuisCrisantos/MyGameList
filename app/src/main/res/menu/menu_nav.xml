@@ -4,27 +4,12 @@
     android:layout_width="wrap_content">
 
     <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/nav_game"
             android:icon="@android:drawable/ic_menu_agenda"
-            android:title="Game List"
-            android:checked="true"/>
-        <item
-            android:id="@+id/nav_top"
-            android:icon="@android:drawable/star_big_on"
-            android:title="Top Games" />
-        <item
-            android:id="@+id/nav_recents"
-            android:icon="@android:drawable/ic_input_add"
-            android:title="Recent Games" />
-        <item
-            android:id="@+id/nav_upcoming"
-            android:icon="@android:drawable/ic_menu_send"
-            android:title="Upcoming games in the next month" />
-        <item
-            android:id="@+id/nav_recommend"
-            android:icon="@android:drawable/ic_menu_delete"
-            android:title="Recommended for you" />
+            android:title="Game List" />
+
         <item
             android:id="@+id/nav_search"
             android:icon="@android:drawable/ic_menu_search"

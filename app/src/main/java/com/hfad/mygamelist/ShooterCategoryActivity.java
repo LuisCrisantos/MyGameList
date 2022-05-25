@@ -7,6 +7,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.hfad.mygamelist.Activities.ShooterDetailActivity;
+
 public class ShooterCategoryActivity extends AppCompatActivity implements ShooterListFragment.Listener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {

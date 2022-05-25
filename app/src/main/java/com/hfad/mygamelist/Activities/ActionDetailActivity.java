@@ -1,8 +1,11 @@
-package com.hfad.mygamelist;
+package com.hfad.mygamelist.Activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.hfad.mygamelist.ActionDetailFragment;
+import com.hfad.mygamelist.R;
 
 public class ActionDetailActivity extends AppCompatActivity {
     public static final String EXTRA_ACTIONID = "actionId";

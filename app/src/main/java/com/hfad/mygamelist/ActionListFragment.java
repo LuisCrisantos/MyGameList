@@ -10,6 +10,8 @@ import android.widget.ListView;
 
 import androidx.fragment.app.ListFragment;
 
+import com.hfad.mygamelist.Activities.Action;
+
 public class ActionListFragment extends ListFragment {
     private Listener listener;
 

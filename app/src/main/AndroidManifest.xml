@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TopLevelActivity">
+        <activity android:name=".Activities.TopLevelActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,14 +17,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".RPGCategoryActivity"></activity>
-        <activity android:name=".RPGDetailActivity"></activity>
+        <activity android:name=".Activities.RPGDetailActivity"></activity>
         <activity android:name=".ActionCategoryActivity"></activity>
-        <activity android:name=".ActionDetailActivity"></activity>
+        <activity android:name=".Activities.ActionDetailActivity"></activity>
         <activity android:name=".ShooterCategoryActivity"></activity>
-        <activity android:name=".ShooterDetailActivity"></activity>
-        <activity android:name=".HelpActivity"></activity>
-        <activity android:name=".FeedbackActivity"></activity>
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".Activities.ShooterDetailActivity"></activity>
+        <activity android:name=".Activities.HelpActivity"></activity>
+        <activity android:name=".Activities.FeedbackActivity"></activity>
+        <activity android:name=".Activities.SearchActivity"></activity>
+        <activity android:name=".MainUserGames"></activity>
+
     </application>
 
 </manifest>

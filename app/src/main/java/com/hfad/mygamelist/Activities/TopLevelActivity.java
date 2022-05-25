@@ -1,12 +1,8 @@
-package com.hfad.mygamelist;
+package com.hfad.mygamelist.Activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
+import com.hfad.mygamelist.Fragments.GameFragment;
+import com.hfad.mygamelist.MainUserGames;
+import com.hfad.mygamelist.R;
 
 public class TopLevelActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     @Override
@@ -68,23 +67,8 @@ public class TopLevelActivity extends AppCompatActivity implements NavigationVie
         switch(id){
 
             case R.id.nav_game:
-                fragment = new GameFragment();
-                break;
-
-            case R.id.nav_top:
-                fragment = new TopGamesFragment();
-                break;
-
-            case R.id.nav_recents:
-                fragment = new RecentsFragment();
-                break;
-
-            case R.id.nav_upcoming:
-                fragment = new UpcomingFragment();
-                break;
-
-            case R.id.nav_recommend:
-                fragment = new RecommendationFragment();
+                /*fragment = new GameFragment();*/
+                intent = new Intent(this, MainUserGames.class);
                 break;
 
             case R.id.nav_search:
