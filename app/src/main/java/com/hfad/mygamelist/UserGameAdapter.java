@@ -13,8 +13,6 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-import static java.security.AccessController.getContext;
-
 public class UserGameAdapter extends ArrayAdapter<UserGames> {
     public UserGameAdapter(@NonNull Context context, ArrayList<UserGames> courseModelArrayList) {
         super(context, 0, courseModelArrayList);
@@ -25,7 +23,6 @@ public class UserGameAdapter extends ArrayAdapter<UserGames> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listitemView = convertView;
         if (listitemView == null) {
-            // Layout Inflater inflates each item to be displayed in GridView.
             listitemView = LayoutInflater.from(getContext()).inflate(R.layout.grid_item, parent, false);
         }
         UserGames userGames = getItem(position);

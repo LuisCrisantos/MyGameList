@@ -6,10 +6,6 @@ import android.widget.GridView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.hfad.mygamelist.R;
-import com.hfad.mygamelist.UserGameAdapter;
-import com.hfad.mygamelist.UserGames;
-
 import java.util.ArrayList;
 
 public class MainUserGames extends AppCompatActivity {
@@ -28,7 +24,18 @@ public class MainUserGames extends AppCompatActivity {
         courseModelArrayList.add(new UserGames("Xenoblade Chronicles", R.drawable.xenobladecover));
         courseModelArrayList.add(new UserGames("Yakuza 0", R.drawable.yakuza0cover));
         courseModelArrayList.add(new UserGames("Kid Icarus Uprising", R.drawable.kidicaruscover));
-
+        courseModelArrayList.add(new UserGames("Xenoblade Chronicles", R.drawable.xenobladecover));
+        courseModelArrayList.add(new UserGames("Yakuza 0", R.drawable.yakuza0cover));
+        courseModelArrayList.add(new UserGames("Kid Icarus Uprising", R.drawable.kidicaruscover));
+        courseModelArrayList.add(new UserGames("Xenoblade Chronicles", R.drawable.xenobladecover));
+        courseModelArrayList.add(new UserGames("Yakuza 0", R.drawable.yakuza0cover));
+        courseModelArrayList.add(new UserGames("Kid Icarus Uprising", R.drawable.kidicaruscover));
+        courseModelArrayList.add(new UserGames("Xenoblade Chronicles", R.drawable.xenobladecover));
+        courseModelArrayList.add(new UserGames("Yakuza 0", R.drawable.yakuza0cover));
+        courseModelArrayList.add(new UserGames("Kid Icarus Uprising", R.drawable.kidicaruscover));
+        courseModelArrayList.add(new UserGames("Xenoblade Chronicles", R.drawable.xenobladecover));
+        courseModelArrayList.add(new UserGames("Yakuza 0", R.drawable.yakuza0cover));
+        courseModelArrayList.add(new UserGames("Kid Icarus Uprising", R.drawable.kidicaruscover));
 
         UserGameAdapter adapter = new UserGameAdapter(this, courseModelArrayList);
         games.setAdapter(adapter);

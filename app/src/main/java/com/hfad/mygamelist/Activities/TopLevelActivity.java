@@ -23,23 +23,6 @@ public class TopLevelActivity extends AppCompatActivity implements NavigationVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_level);
 
-        /*AdapterView.OnItemClickListener itemClickListener =
-                new AdapterView.OnItemClickListener(){
-                    public void onItemClick(AdapterView<?> listView,
-                                            View itemView,
-                                            int position,
-                                            long id) {
-                        if (position == 0) {
-                            Intent intent = new Intent(TopLevelActivity.this,
-                                    RPGCategoryActivity.class);
-                            startActivity(intent);
-                        }
-                    }
-                };
-
-        ListView listView = (ListView) findViewById(R.id.list_options);
-        listView.setOnItemClickListener(itemClickListener);*/
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -67,17 +50,15 @@ public class TopLevelActivity extends AppCompatActivity implements NavigationVie
         switch(id){
 
             case R.id.nav_game:
-                /*fragment = new GameFragment();*/
                 intent = new Intent(this, MainUserGames.class);
                 break;
 
             case R.id.nav_search:
-                //fragment = new SearchFragment();
                 intent = new Intent(this, SearchActivity.class);
                 break;
 
             case R.id.nav_help:
-                intent = new Intent(this, HelpActivity.class);
+                intent = new Intent(this, AboutUsActivity.class);
                 break;
 
             case R.id.nav_feedback:
@@ -107,10 +88,5 @@ public class TopLevelActivity extends AppCompatActivity implements NavigationVie
             super.onBackPressed();
         }
     }
-
-    /*public void onShowDetails(View view) {
-        Intent intent = new Intent(this, DetailActivity.class);
-        startActivity(intent);
-    }*/
 }
 

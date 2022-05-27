@@ -22,10 +22,11 @@
         <activity android:name=".Activities.ActionDetailActivity"></activity>
         <activity android:name=".ShooterCategoryActivity"></activity>
         <activity android:name=".Activities.ShooterDetailActivity"></activity>
-        <activity android:name=".Activities.HelpActivity"></activity>
+        <activity android:name=".Activities.AboutUsActivity"></activity>
         <activity android:name=".Activities.FeedbackActivity"></activity>
         <activity android:name=".Activities.SearchActivity"></activity>
         <activity android:name=".MainUserGames"></activity>
+        <activity android:name=".Activities.ReceiveMessageActivity"></activity>
 
     </application>
 

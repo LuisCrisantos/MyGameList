@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="com.hfad.mygamelist.MainUserGames">
-    <!--<TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:text="User game list" />-->
 
     <GridView
         android:id="@+id/gridUserGame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:columnWidth="120dp"
         android:horizontalSpacing="10dp"
         android:numColumns="auto_fit"
         android:padding="5dp"
         android:verticalSpacing="5dp" />
-
-</ScrollView>
+</LinearLayout>

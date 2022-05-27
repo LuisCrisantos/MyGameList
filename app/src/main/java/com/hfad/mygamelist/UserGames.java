@@ -25,19 +25,4 @@ public class UserGames{
     public int getId() {
         return name.hashCode();
     }
-
-    /*public static UserGames[] Games = {
-        new UserGames("Xenoblade Chronicles", R.drawable.xenobladecover),
-        new UserGames("Yakuza 0", R.drawable.yakuza0cover),
-        new UserGames("Kid Icarus Uprising", R.drawable.kidicaruscover)
-    };
-
-    public static UserGames getItem(int id) {
-        for (UserGames item : Games) {
-            if (item.getId() == id) {
-                return item;
-            }
-        }
-        return null;
-    }*/
 }
