@@ -1,10 +1,5 @@
 package com.hfad.mygamelist;
 
-import android.os.Bundle;
-import android.widget.GridView;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 public class UserGames{
     private String name;
     private int idImage;

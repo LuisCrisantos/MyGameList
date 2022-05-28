@@ -19,9 +19,15 @@ public class MainUserGames extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         games = findViewById(R.id.gridUserGame);
+        MyGameListDatabaseHelper db = new MyGameListDatabaseHelper(this);
+        DbResponse response = db.getUserData();
 
         ArrayList<UserGames> courseModelArrayList = new ArrayList<UserGames>();
-        courseModelArrayList.add(new UserGames("Xenoblade Chronicles", R.drawable.xenobladecover));
+        courseModelArrayList.add(new UserGames(response.name, R.drawable.xenobladecover));
+        courseModelArrayList.add(new UserGames(response.name, R.drawable.yakuza0cover));
+        courseModelArrayList.add(new UserGames(response.name, R.drawable.kidicaruscover));
+
+        /*courseModelArrayList.add(new UserGames("Xenoblade Chronicles", R.drawable.xenobladecover));
         courseModelArrayList.add(new UserGames("Yakuza 0", R.drawable.yakuza0cover));
         courseModelArrayList.add(new UserGames("Kid Icarus Uprising", R.drawable.kidicaruscover));
         courseModelArrayList.add(new UserGames("Xenoblade Chronicles", R.drawable.xenobladecover));
@@ -35,7 +41,7 @@ public class MainUserGames extends AppCompatActivity {
         courseModelArrayList.add(new UserGames("Kid Icarus Uprising", R.drawable.kidicaruscover));
         courseModelArrayList.add(new UserGames("Xenoblade Chronicles", R.drawable.xenobladecover));
         courseModelArrayList.add(new UserGames("Yakuza 0", R.drawable.yakuza0cover));
-        courseModelArrayList.add(new UserGames("Kid Icarus Uprising", R.drawable.kidicaruscover));
+        courseModelArrayList.add(new UserGames("Kid Icarus Uprising", R.drawable.kidicaruscover));*/
 
         UserGameAdapter adapter = new UserGameAdapter(this, courseModelArrayList);
         games.setAdapter(adapter);

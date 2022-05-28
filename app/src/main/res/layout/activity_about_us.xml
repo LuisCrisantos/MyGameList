@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,15 +7,67 @@
     android:background="@color/white"
     tools:context=".Activities.AboutUsActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <include
         layout="@layout/toolbar_main"
         android:id="@+id/toolbar"
         />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Help"
-        />
+        android:id="@+id/about_us_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Us"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="10pt">
+    </TextView>
 
-</LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="This application was made as a final project of the Mobile Application Development class.
+        \nThis application tries to emulate the concept of the popular web site MyAnimeList but focused on games.
+        \n\nIn this application you can search games from the database and add it to your own list of games and rate them (in theory).
+        \nEach game has information about its synopsis, developers and the hypothetical user score (the numbers right now are just an example).
+        \n\nThis application was developed using Java through Android Studio. If you want to check out the source code click the button below to go the Github repository!" />
+
+    <TextView
+        android:id="@+id/technote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tech note"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="8pt">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="This application was developed using Java through Android Studio. If you want to check out the source code click the button below to go the Github repository!" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick"
+        android:text="View the source!" />
+    </LinearLayout>
+</ScrollView>

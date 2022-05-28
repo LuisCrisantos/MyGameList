@@ -9,4 +9,5 @@ public class DbResponse {
     public String platforms;
     public String rel_date;
     public int imageResourceId;;
+    public int typeId;
 }
