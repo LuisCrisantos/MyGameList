@@ -1,6 +1,7 @@
 package com.hfad.mygamelist;
 
 public class DbResponse {
+    public int id;
     public String name;
     public String description;
     public String score;

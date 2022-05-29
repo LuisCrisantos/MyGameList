@@ -63,17 +63,17 @@ public class MyGameListDatabaseHelper  extends SQLiteOpenHelper {
     }
 
     private static void insertUserGames(SQLiteDatabase db, String name, String description, String score, String developers, String publishers, String platforms, String rel_date, int resourceId, int type) {
-        ContentValues shooterValues = new ContentValues();
-        shooterValues.put("NAME", name);
-        shooterValues.put("DESCRIPTION", description);
-        shooterValues.put("SCORE", score);
-        shooterValues.put("DEVELOPERS", developers);
-        shooterValues.put("PUBLISHERS", publishers);
-        shooterValues.put("PLATFORMS", platforms);
-        shooterValues.put("REL_DATE", rel_date);
-        shooterValues.put("IMAGE_RESOURCE_ID", resourceId);
-        shooterValues.put("TYPE_ID", type);
-        db.insert("USER_GAMES", null, shooterValues);
+        ContentValues userValues = new ContentValues();
+        userValues.put("NAME", name);
+        userValues.put("DESCRIPTION", description);
+        userValues.put("SCORE", score);
+        userValues.put("DEVELOPERS", developers);
+        userValues.put("PUBLISHERS", publishers);
+        userValues.put("PLATFORMS", platforms);
+        userValues.put("REL_DATE", rel_date);
+        userValues.put("IMAGE_RESOURCE_ID", resourceId);
+        userValues.put("TYPE_ID", type);
+        db.insert("USER_GAMES", null, userValues);
     }
 
     private void updateMyDatabase(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -197,7 +197,7 @@ public class MyGameListDatabaseHelper  extends SQLiteOpenHelper {
                             "to a faction, either the Magistrate or the Resistance.",
                     "7.8", "Evil Mojo Games", "Hi-Rez Studios", "Nintendo Switch, PS4, Xbox One, PC", "08/05/2018", R.drawable.paladinscover, 3);
 
-            insertUserGames(db, "Xenoblade Chronicles Definitive Edition", "Long ago, the world was nothing more than an endless sea " +
+            insertUserGames(db,"Xenoblade Chronicles Definitive Edition", "Long ago, the world was nothing more than an endless sea " +
                             "cloaked in a boundless sky, reaching as far as could possibly be imagined.\n"+
                             "Then two great titans came into existence: the Bionis and the Mechonis. " +
                             "The titans were locked in a timeless battle. Until at last...\n" +
@@ -205,23 +205,30 @@ public class MyGameListDatabaseHelper  extends SQLiteOpenHelper {
                             "this vast land stretching across the remains of the Bionis, is under attack from a relentless force known as the Mechon.",
                     "9.9", "Monolithsoft", "Nintendo", "Nintendo Switch", "29/05/2020", R.drawable.xenobladecover, 1);
 
-            insertUserGames(db, "Yakuza 0", "In December, 1988, two unlikely figures from the Yakuza world, " +
+            insertUserGames(db,"Yakuza 0", "In December, 1988, two unlikely figures from the Yakuza world, " +
                             "Kazuma Kiryu of the Kanto region and Goro Majima of the Kansai Region, have suddenly found themselves " +
                             "getting involved in the terrible events of the so-called \"Empty Lot\" dispute, which is the centrepiece " +
                             "of power struggle for all the dark organizations across Japan. In order to find out the truth behind such " +
                             "a power struggle, as well as maintain their own innocence and safety, they set out to investigate all the events surrounding the \"Empty Lot\" incident.",
                     "9.7", "Ryu ga Gotoku Studio", "Sega", "PS3, PS4, Xbox One, PC", "12/03/2015", R.drawable.yakuza0cover, 2);
 
-            insertUserGames(db, "Kid Icarus Uprising", "25 years after the original Kid Icarus, Medusa has been resurrected " +
+            insertUserGames(db,"Kid Icarus Uprising", "25 years after the original Kid Icarus, Medusa has been resurrected " +
                             "and once again attempts to eradicate mankind while seeking revenge on Pit and Palutena. Upon learning this, " +
                             "Palutena summons Pit to stop the Underworld Army and bring peace to their realm once more.",
                     "9.9", "Project Sora", "Nintendo", "Nintendo 3DS", "22/03/2012", R.drawable.kidicaruscover, 3);
+
+            insertUserGames(db,"Persona 3 FES", "Time never waits.\n" +
+                            "It delivers all equally to the same end.\n" +
+                            "You, who wish to safeguard the future, however limited it may be...\n" +
+                            "You will be given one year; go forth without falter with your heart as your guide...",
+                    "9.7", "Atlus", "Sony", "PS2", "22/04/2008",R.drawable.persona3cover, 1);
 
         }
         if (oldVersion < 2) {
             db.execSQL("ALTER TABLE RPG ADD COLUMN FAVORITE NUMERIC;");
             db.execSQL("ALTER TABLE ACTIONS ADD COLUMN FAVORITE NUMERIC;");
             db.execSQL("ALTER TABLE SHOOTER ADD COLUMN FAVORITE NUMERIC;");
+            db.execSQL("ALTER TABLE USER_GAMES ADD COLUMN FAVORITE NUMERIC;");
         }
     }
 
@@ -303,27 +310,4 @@ public class MyGameListDatabaseHelper  extends SQLiteOpenHelper {
         return obj;
     }
 
-    public DbResponse getUserData(){
-        DbResponse obj = new DbResponse();
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.query("USER_GAMES",
-                new String[]{"NAME", "DESCRIPTION", "SCORE", "DEVELOPERS", "PUBLISHERS", "PLATFORMS", "REL_DATE", "IMAGE_RESOURCE_ID", "TYPE_ID"},
-                "_id = ?",
-                new String[]{Integer.toString((int) RPGDetailFragment.getRpgId() + 1 )},
-                null, null, null);
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-            obj.name = cursor.getString(0);
-            obj.description = cursor.getString(1);
-            obj.score = cursor.getString(2);
-            obj.developers = cursor.getString(3);
-            obj.publishers = cursor.getString(4);
-            obj.platforms = cursor.getString(5);
-            obj.rel_date = cursor.getString(6);
-            obj.imageResourceId = cursor.getInt(7);
-            obj.typeId = cursor.getInt(8);
-        }
-        cursor.close();
-        return obj;
-    }
 }
