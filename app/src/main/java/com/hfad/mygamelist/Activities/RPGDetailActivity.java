@@ -11,10 +11,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hfad.mygamelist.InsertGame;
 import com.hfad.mygamelist.R;
 import com.hfad.mygamelist.RPGDetailFragment;
 
-public class RPGDetailActivity extends AppCompatActivity {
+public class RPGDetailActivity extends AppCompatActivity{
     public static final String EXTRA_RPGID = "rpgId";
 
     @Override

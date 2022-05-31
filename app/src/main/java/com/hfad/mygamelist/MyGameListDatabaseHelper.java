@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.ContactsContract;
+import android.util.Log;
+import android.widget.Toast;
 
 public class MyGameListDatabaseHelper  extends SQLiteOpenHelper {
 
@@ -217,12 +220,6 @@ public class MyGameListDatabaseHelper  extends SQLiteOpenHelper {
                             "Palutena summons Pit to stop the Underworld Army and bring peace to their realm once more.",
                     "9.9", "Project Sora", "Nintendo", "Nintendo 3DS", "22/03/2012", R.drawable.kidicaruscover, 3);
 
-            insertUserGames(db,"Persona 3 FES", "Time never waits.\n" +
-                            "It delivers all equally to the same end.\n" +
-                            "You, who wish to safeguard the future, however limited it may be...\n" +
-                            "You will be given one year; go forth without falter with your heart as your guide...",
-                    "9.7", "Atlus", "Sony", "PS2", "22/04/2008",R.drawable.persona3cover, 1);
-
         }
         if (oldVersion < 2) {
             db.execSQL("ALTER TABLE RPG ADD COLUMN FAVORITE NUMERIC;");
@@ -235,6 +232,7 @@ public class MyGameListDatabaseHelper  extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists " + "RPG");
+        db.execSQL("drop table if exists " + "USER_GAMES");
         this.onCreate(db);
     }
 
@@ -308,6 +306,21 @@ public class MyGameListDatabaseHelper  extends SQLiteOpenHelper {
         }
         cursor.close();
         return obj;
+    }
+
+    public void addGame(String name, String description, int photo, String score, String devs, String publ, String platforms, String rel_date, SQLiteDatabase db){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("NAME", name);
+        contentValues.put("DESCRIPTION", description);
+        contentValues.put("SCORE", score);
+        contentValues.put("DEVELOPERS", devs);
+        contentValues.put("PUBLISHERS", publ);
+        contentValues.put("PLATFORMS", platforms);
+        contentValues.put("REL_DATE", rel_date);
+        contentValues.put("IMAGE_RESOURCE_ID", R.drawable.yakuza7cover);
+
+        db.insert("USER_GAMES", null, contentValues);
+        Log.d("Base operations","Insert Success!");
     }
 
 }

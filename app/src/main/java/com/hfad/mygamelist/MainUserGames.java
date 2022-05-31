@@ -27,7 +27,7 @@ public class MainUserGames extends AppCompatActivity {
         MyGameListDatabaseHelper mygamelist = new MyGameListDatabaseHelper(this);
         SQLiteDatabase db = mygamelist.getWritableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT NAME, IMAGE_RESOURCE_ID FROM  USER_GAMES",null);
+        Cursor cursor = db.rawQuery("SELECT NAME, IMAGE_RESOURCE_ID FROM USER_GAMES",null);
 
         String[] array1 = new String[cursor.getCount()];
         int[] array2 = new int[cursor.getCount()];

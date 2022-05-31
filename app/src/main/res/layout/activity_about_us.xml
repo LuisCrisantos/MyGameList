@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="This application was developed using Java through Android Studio. If you want to check out the source code click the button below to go the Github repository!" />
+        android:text="This application was developed using Java through Android Studio and with the guidance of Dawn Griffith and David Griffith's book Head First Android Development 2nd Edition. \nIf you want to check out the source code click the button below to go the Github repository!" />
 
     <Button
         android:layout_width="wrap_content"

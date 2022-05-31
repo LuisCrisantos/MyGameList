@@ -30,32 +30,6 @@ public class ShooterDetailFragment extends Fragment {
         super.onStart();
         View view = getView();
         if (view != null) {
-            /*TextView title = (TextView) view.findViewById(R.id.name);
-            Shooter shooter = Shooter.games[(int) shooterId];
-            title.setText(shooter.getName());
-
-            TextView description = (TextView) view.findViewById(R.id.description);
-            description.setText(shooter.getDescription());
-
-            ImageView photo = (ImageView) view.findViewById(R.id.photo);
-            photo.setImageResource(shooter.getImageResourceId());
-            photo.setContentDescription(shooter.getName());
-
-            TextView score = (TextView) view.findViewById(R.id.score);
-            score.setText(shooter.getScore());
-
-            TextView developers = (TextView) view.findViewById(R.id.developers);
-            developers.setText(shooter.getDevelopers());
-
-            TextView publishers = (TextView) view.findViewById(R.id.publishers);
-            publishers.setText(shooter.getPublishers());
-
-            TextView platforms = (TextView) view.findViewById(R.id.platforms);
-            platforms.setText(shooter.getPlatforms());
-
-            TextView rel_date = (TextView) view.findViewById(R.id.rel_date);
-            rel_date.setText(shooter.getRel_date());*/
-
             MyGameListDatabaseHelper db = new MyGameListDatabaseHelper(getActivity());
             DbResponse response = db.getShooterData();
 

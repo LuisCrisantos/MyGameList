@@ -14,10 +14,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 import com.hfad.mygamelist.Fragments.GameFragment;
+import com.hfad.mygamelist.InsertGame;
 import com.hfad.mygamelist.MainUserGames;
 import com.hfad.mygamelist.R;
+import com.hfad.mygamelist.RPGDetailFragment;
 
-public class TopLevelActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class TopLevelActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
